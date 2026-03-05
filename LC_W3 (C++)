@@ -1,1 +1,18 @@
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
 
+        int haySize = haystack.size(), needleSize = needle.size();
+
+//  outerI (Outer Index Access), innerI (Inner Index Access).
+
+        for (int outerI = 0; outerI <= (haySize - needleSize); outerI++) {
+                int innerI = 0;
+                    for (; innerI < needleSize; innerI++) {
+                        if (haystack[outerI + innerI] != needle[innerI])break;
+                    }
+                    if (innerI == needleSize) return outerI;
+        }
+        return -1;
+    }
+};
