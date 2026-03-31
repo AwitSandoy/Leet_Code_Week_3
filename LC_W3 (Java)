@@ -1,0 +1,18 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int haySize = haystack.length(), needleSize = needle.length();
+
+//  outerI (Outer Index Access), innerI (Inner Index Access).
+
+        for (int outerI = 0; outerI <= (haySize - needleSize); outerI++) {
+                int innerI = 0;
+                    for (; innerI < needleSize; innerI++) {
+                        if (haystack.charAt(outerI + innerI) != needle.charAt(innerI))
+                        break;
+                    }
+                    if (innerI == needleSize) return outerI;
+        }
+        return -1;
+
+    }
+}
